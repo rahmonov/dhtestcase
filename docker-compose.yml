@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - "db"
+    command: bash -c "./utils/wait-for-it.sh db:5432 -- python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"
+    restart: on-failure
+
+  db:
+    image: mdillon/postgis:latest
+    ports:
+      - "5432:5432"
+    volumes:
+      - "./dbdata:/var/lib/postgresql/data"

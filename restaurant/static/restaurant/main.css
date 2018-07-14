@@ -1,0 +1,19 @@
+#mapid {
+  height: 95vh;
+}
+
+#optimize-btn-wrapper {
+  text-align: center;
+  padding: 5px;
+}
+
+#optimize-btn {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
