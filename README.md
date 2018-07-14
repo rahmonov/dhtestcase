@@ -27,11 +27,9 @@ docker-compose up
 
 1. Create restaurants by sending requests to the relevant endpoint as shown in the [API Endpoints section].
 2. Go to `http://localhost:8000`.
-3. You will see the restaurants on the map with their delivery areas:
-![restaurants](http://take.ms/cT3Pj)
+3. You will see the restaurants on the map with their delivery areas: http://take.ms/cT3Pj
 4. Click on the `Optimize` button on the bottom. The page will refresh after optimization is done.
-5. You will see the restaurants with new delivery areas optimized not to overlap with each other:
-![non-overlapping-restaurants](http://take.ms/ZF1DJ)
+5. You will see the restaurants with new delivery areas optimized not to overlap with each other: http://take.ms/ZF1DJ
 
 ## Running the tests
 
