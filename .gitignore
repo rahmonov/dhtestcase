@@ -1,3 +1,4 @@
 env
 dbdata
 .pytest_cache
+.idea
