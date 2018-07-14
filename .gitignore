@@ -2,3 +2,5 @@ env
 dbdata
 .pytest_cache
 .idea
+__pycache__/
+*.py[cod]
