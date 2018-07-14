@@ -17,6 +17,16 @@
 Because there were already a couple of things I needed to learn first (PostGIS, LeafletJS) and thus I didn't want to
 spend extra time to freshen my Flask knowledge (it is a little rusty since I haven't used it in a long time).
 
+## Optimization algorithm
+It is pretty straight forward:
+
+It iterates through all restaurants and when it finds a restaurant that overlaps with another it will first find the best
+direction to move the restaurant. It does it by moving the restaurant in different directions and comparing the resulting overlapping area.
+The direction with the least amount of overlapping area is considered the best direction. After finding the best direction to move the
+restaurant it will move the restaurant in that direction until there is no overlapping area between the restaurants.
+
+As the algorithm does not change the shape of the polygon but simply translates it, the area will not change.
+
 ## Setting up
 
 ```
@@ -36,6 +46,14 @@ docker-compose up
 ```
 docker-compose exec web pytest
 ```
+
+## Notes
+
+1. The optimization algorithm may not be what is needed if different business rules are taken into account. As this is
+a test case, I assumed that there is no constraint in how far can the polygon move from its original location.
+2. The `translate()` function could be improved by using some library instead of the db function that is used here. It would
+improve the readability as well.
+3. Dockerfile could further be improved by using smaller base images such as alpine.
 
 ## API Endpoints
 
